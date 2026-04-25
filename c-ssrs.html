@@ -14,9 +14,9 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .logo-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; }
 .logo-text { font-weight: 600; font-size: 1.2rem; color: #72243e; letter-spacing: 0.06em; }
 .logo-text span { color: #d4547e; }
-.logo-tagline { font-size: 0.62rem; color: #c08090; font-weight: 300; letter-spacing: 0.03em; margin-top: 1px; }
+.logo-tagline { font-size: 0.62rem; color: #c08090; font-weight: 300; margin-top: 1px; }
 .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
-.nav-links a { text-decoration: none; color: #993556; font-size: 0.88rem; transition: color 0.2s; }
+.nav-links a { text-decoration: none; color: #993556; font-size: 0.88rem; }
 .nav-links a:hover { color: #d4547e; }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
 .hamburger span { display: block; width: 24px; height: 2px; background: #d4547e; border-radius: 2px; transition: all 0.3s; }
@@ -31,50 +31,47 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .page-hero { background: linear-gradient(135deg, #fbeaf0 0%, #fff5f8 60%, #ffd6e7 100%); padding: 3rem 3.5rem 2.5rem; border-bottom: 1px solid #ffd6e7; }
 .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: #993556; margin-bottom: 1.2rem; }
 .breadcrumb a { text-decoration: none; color: #993556; }
-.breadcrumb a:hover { color: #d4547e; }
-.breadcrumb span { color: #c08090; }
 .tag { display: inline-flex; align-items: center; gap: 0.4rem; background: white; border: 1px solid #f4c0d1; color: #993556; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1rem; }
 .tag-dot { width: 6px; height: 6px; border-radius: 50%; background: #d4547e; }
-.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #4b1528; font-weight: 600; margin-bottom: 0.7rem; line-height: 1.2; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #4b1528; font-weight: 600; margin-bottom: 0.7rem; }
 .page-hero h1 em { font-style: italic; color: #d4547e; }
 .page-hero p { color: #72243e; font-size: 0.92rem; font-weight: 300; line-height: 1.75; max-width: 640px; }
-.main { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+.main { max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 .email-block { background: white; border: 1.5px solid #d4547e; border-radius: 16px; padding: 1.5rem 1.8rem; margin-bottom: 2rem; }
 .email-block label { display: block; font-size: 0.82rem; font-weight: 600; color: #4b1528; margin-bottom: 0.6rem; }
-.email-block input { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; color: #4b1528; outline: none; transition: border-color 0.2s; }
+.email-block input { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; color: #4b1528; outline: none; }
 .email-block input:focus { border-color: #d4547e; }
 .email-hint { font-size: 0.75rem; color: #993556; margin-top: 0.4rem; font-weight: 300; }
-.instrucciones { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 1.3rem 1.8rem; margin-bottom: 2rem; font-size: 0.88rem; color: #72243e; line-height: 1.7; font-weight: 300; }
-.instrucciones strong { color: #4b1528; font-weight: 600; }
-.progress-label { font-size: 0.75rem; color: #993556; margin-bottom: 0.5rem; text-align: right; }
-.progress-bar { background: #ffd6e7; border-radius: 999px; height: 4px; margin-bottom: 2rem; overflow: hidden; }
-.progress-fill { height: 100%; background: #d4547e; border-radius: 999px; transition: width 0.4s ease; }
-.subescala-header { display: flex; align-items: center; gap: 0.7rem; margin: 2rem 0 1rem; }
-.subescala-dot { width: 10px; height: 10px; border-radius: 50%; background: #d4547e; flex-shrink: 0; }
-.subescala-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #4b1528; }
-.pregunta { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 1.4rem 1.8rem; margin-bottom: 0.8rem; transition: border-color 0.2s; }
-.pregunta:hover { border-color: #f4c0d1; }
-.pregunta.respondida { border-color: #f4c0d1; background: #fffafc; }
-.pregunta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
-.pregunta-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #d4547e; flex-shrink: 0; line-height: 1; margin-top: 2px; min-width: 22px; }
-.pregunta-text { font-size: 0.9rem; color: #4b1528; line-height: 1.5; font-weight: 400; }
-.opciones-h { display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr); gap: 0.4rem; }
-.opciones-sino { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-.opcion input[type="radio"] { display: none; }
-.opcion label { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; background: #fff5f8; border: 1.5px solid #ffd6e7; border-radius: 10px; padding: 0.6rem 0.4rem; cursor: pointer; transition: all 0.2s; text-align: center; font-size: 0.75rem; color: #72243e; font-weight: 400; line-height: 1.3; }
-.opcion label:hover { border-color: #f4c0d1; background: #fbeaf0; }
-.opcion input[type="radio"]:checked + label { background: #d4547e; border-color: #d4547e; color: white; font-weight: 500; }
+.aviso { background: #fbeaf0; border: 1px solid #f4c0d1; border-radius: 12px; padding: 1rem 1.3rem; margin-bottom: 2rem; font-size: 0.82rem; color: #72243e; line-height: 1.6; }
+.section-header { display: flex; align-items: center; gap: 0.7rem; margin: 2rem 0 1rem; }
+.section-dot { width: 10px; height: 10px; border-radius: 50%; background: #d4547e; flex-shrink: 0; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #4b1528; }
+.item { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 1.4rem 1.8rem; margin-bottom: 1rem; }
+.item-num { font-size: 0.92rem; font-weight: 600; color: #d4547e; margin-bottom: 0.4rem; }
+.item-desc { font-size: 0.8rem; color: #72243e; line-height: 1.6; margin-bottom: 0.8rem; font-style: italic; }
+.item-preguntas { font-size: 0.82rem; color: #4b1528; line-height: 1.9; margin-bottom: 0.8rem; }
+.sino-row { display: flex; gap: 1rem; margin-bottom: 0.8rem; }
+.sino-btn { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0.6rem; border: 1.5px solid #ffd6e7; border-radius: 10px; cursor: pointer; font-size: 0.88rem; font-weight: 500; color: #72243e; background: #fff5f8; transition: all 0.2s; }
+.sino-btn:hover { border-color: #f4c0d1; background: #fbeaf0; }
+.sino-btn.sel-si { background: #d4547e; border-color: #d4547e; color: white; }
+.sino-btn.sel-no { background: #4b1528; border-color: #4b1528; color: white; }
+.field-label { font-size: 0.8rem; color: #4b1528; font-weight: 600; margin-top: 0.8rem; margin-bottom: 0.3rem; }
+textarea.desc-field { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; color: #4b1528; outline: none; resize: vertical; min-height: 55px; }
+textarea.desc-field:focus { border-color: #d4547e; }
+input.num-field, input.text-field { width: 100%; padding: 0.6rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; color: #4b1528; outline: none; }
+input.num-field:focus, input.text-field:focus { border-color: #d4547e; }
+select.sel-field { width: 100%; padding: 0.6rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; color: #4b1528; outline: none; background: white; }
+select.sel-field:focus { border-color: #d4547e; }
 .submit-area { margin-top: 2.5rem; text-align: center; }
-.btn-submit { background: #d4547e; color: white; border: none; padding: 0.9rem 2.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.5rem; }
-.btn-submit:hover { background: #b5446e; transform: translateY(-1px); }
-.btn-submit:disabled { background: #e0a0b5; cursor: not-allowed; transform: none; }
-.submit-note { font-size: 0.78rem; color: #993556; margin-top: 0.8rem; font-weight: 300; }
+.btn-submit { background: #d4547e; color: white; border: none; padding: 0.9rem 2.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+.btn-submit:hover { background: #b5446e; }
+.submit-note { font-size: 0.78rem; color: #993556; margin-top: 0.8rem; }
 .error-msg { color: #c0392b; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
 .success-msg { display: none; text-align: center; padding: 3rem 2rem; background: white; border: 1px solid #ffd6e7; border-radius: 20px; margin-top: 2rem; }
 .success-icon { font-size: 3rem; margin-bottom: 1rem; }
 .success-msg h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #4b1528; margin-bottom: 0.5rem; }
 .success-msg p { color: #72243e; font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
-@media (max-width: 600px) { .page-hero { padding: 2rem 1.5rem; } .main { padding: 1.5rem 1rem 3.5rem; } .pregunta { padding: 1rem; } }
+@media (max-width: 600px) { .page-hero { padding: 2rem 1.5rem; } .main { padding: 1.5rem 1rem 3.5rem; } .item { padding: 1rem; } }
 </style>
 </head>
 <body>
@@ -88,7 +85,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <li><a href="cuestionarios.html">Cuestionarios</a></li>
     <li><a href="nosotros.html">Nosotros</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
@@ -96,103 +93,219 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <a href="cuestionarios.html" onclick="toggleMenu()">Cuestionarios</a>
   <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
 </div>
+
 <div class="page-hero">
-  <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>Escala Columbia para Evaluar el Riesgo de Suicidio (C-SSRS)</span></div>
+  <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>C-SSRS</span></div>
   <div class="tag"><span class="tag-dot"></span>Riesgo de Suicidio / Deseos Adelantados de Muerte</div>
-  <h1>Escala Columbia para Evaluar el Riesgo de Suicidio (<em>C-SSRS</em>)</h1>
-  <p>Esta escala debe ser administrada por un profesional capacitado. Evalúa la presencia de ideación y comportamiento suicida desde el último contacto. Responda Sí o No a cada ítem.</p>
+  <h1>Escala Columbia para Evaluar el Riesgo de <em>Suicidio</em> (C-SSRS)</h1>
+  <p>Versión: Deteriorado cognitivamente — Desde el último contacto (23 de junio de 2010). Posner, K. et al.</p>
 </div>
+
 <div class="main">
   <div class="email-block">
     <label for="email-psicologo">📧 Email del psicólogo/a</label>
-    <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
-    <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
+    <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com">
+    <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar la escala.</div>
   </div>
-  <div class="instrucciones"><strong>Instrucciones:</strong> Esta escala debe ser administrada por un profesional capacitado. Evalúa la presencia de ideación y comportamiento suicida desde el último contacto. Responda Sí o No a cada ítem.</div>
-  <div class="progress-label" id="progressLabel">0 de 1184 preguntas respondidas</div>
-  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-  <form id="mainForm"><div id="preguntasContainer"></div>
-    <div class="submit-area">
-      <button type="button" class="btn-submit" id="btnSubmit" onclick="enviarFormulario()" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Enviar respuestas
-      </button>
-      <div class="submit-note">Sus respuestas se enviarán de forma confidencial al profesional indicado.</div>
-      <div class="error-msg" id="errorMsg">Por favor, complete todas las preguntas y el email del psicólogo/a antes de enviar.</div>
-    </div>
-  </form>
+
+  <div class="aviso"><strong>Aviso:</strong> Esta escala debe ser usada por personas que hayan sido capacitadas para administrarla. La determinación de la presencia de ideación o comportamiento suicida depende del criterio del profesional que la administra.</div>
+
+  <div class="section-header"><div class="section-dot"></div><div class="section-title">IDEACIÓN SUICIDA</div></div>
+  <p style="font-size:0.8rem;color:#72243e;margin-bottom:1rem;line-height:1.6;">Haga las preguntas 1 y 2. Si ambas respuestas son negativas, pase a la sección de "Comportamiento suicida". Si la respuesta a la pregunta 2 es "sí", haga las preguntas 3, 4 y 5. Si la respuesta a la pregunta 1 y/o 2 es "sí", complete la sección "Intensidad de la ideación".</p>
+
+  <div class="item">
+    <div class="item-num">1. Deseos de morir</div>
+    <div class="item-desc">El/la participante reconoce tener pensamientos sobre su deseo de morir o dejar de vivir o de quedarse dormido/a y no despertar.</div>
+    <div class="item-preguntas">• ¿Has pensado en estar muerto/a o lo que sería estar muerto/a?<br>• ¿Has deseado estar muerto/a o que pudieras quedarte dormido/a y nunca despertar?<br>• ¿Desearías dejar de vivir?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'i1','si')">Sí</div><div class="sino-btn" onclick="sel(this,'i1','no')">No</div></div>
+    <input type="hidden" id="i1" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="i1d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">2. Pensamientos suicidas activos no específicos</div>
+    <div class="item-desc">Pensamientos generales, no específicos de querer terminar con su vida/suicidarse sin pensamientos sobre maneras de matarse, métodos, intenciones o plan.</div>
+    <div class="item-preguntas">• ¿Has pensado en hacer algo para dejar de vivir?<br>• ¿Has pensado en matarte?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'i2','si')">Sí</div><div class="sino-btn" onclick="sel(this,'i2','no')">No</div></div>
+    <input type="hidden" id="i2" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="i2d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">3. Ideación suicida activa con cualquier método (no un plan) sin intención de actuar</div>
+    <div class="item-desc">El/la participante ha pensado en al menos un método pero no en un plan específico con hora, lugar o detalles elaborados.</div>
+    <div class="item-preguntas">• ¿Has pensado en cómo lo harías o qué harías para dejar de vivir (matarte)? ¿En qué pensaste?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'i3','si')">Sí</div><div class="sino-btn" onclick="sel(this,'i3','no')">No</div></div>
+    <input type="hidden" id="i3" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="i3d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">4. Ideación suicida activa con cierta intención de actuar, sin un plan específico</div>
+    <div class="item-desc">El/la participante tiene pensamientos suicidas activos e informa tener cierta intención de llevarlos a cabo.</div>
+    <div class="item-preguntas">• Cuando pensaste hacer algo para dejar de vivir (o matarte), ¿pensaste que esto era algo que realmente podrías hacer?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'i4','si')">Sí</div><div class="sino-btn" onclick="sel(this,'i4','no')">No</div></div>
+    <input type="hidden" id="i4" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="i4d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">5. Ideación suicida activa con un plan específico e intención</div>
+    <div class="item-desc">Pensamientos de suicidio con detalles elaborados completa o parcialmente y el/la participante tiene cierta intención de llevarlos a cabo.</div>
+    <div class="item-preguntas">• ¿Has decidido cómo o cuándo harías algo para dejar de vivir/matarte?<br>• ¿Has planificado (elaboraste los detalles de) cómo lo harías? ¿Cuál era tu plan?<br>• Cuando hiciste este plan, ¿había alguna parte tuya pensando en hacerlo realmente?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'i5','si')">Sí</div><div class="sino-btn" onclick="sel(this,'i5','no')">No</div></div>
+    <input type="hidden" id="i5" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="i5d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="section-header"><div class="section-dot"></div><div class="section-title">INTENSIDAD DE LA IDEACIÓN</div></div>
+  <p style="font-size:0.8rem;color:#72243e;margin-bottom:1rem;">Evaluar con respecto al tipo más serio de ideación (1-5), con 1 siendo el menos serio y 5 el más serio.</p>
+  <div class="item">
+    <div class="field-label">Tipo de ideación más seria (nº 1-5):</div>
+    <select class="sel-field" id="int_tipo"><option value="">Seleccionar...</option><option>1 — Deseos de morir</option><option>2 — Pensamientos suicidas no específicos</option><option>3 — Ideación con método sin plan</option><option>4 — Ideación con intención sin plan específico</option><option>5 — Ideación con plan específico e intención</option></select>
+    <div class="field-label">Descripción de la ideación más seria:</div>
+    <textarea class="desc-field" id="int_desc" placeholder="Descripción..."></textarea>
+    <div class="field-label">Frecuencia — ¿Cuántas veces ha tenido estos pensamientos?</div>
+    <select class="sel-field" id="int_freq"><option value="">Seleccionar...</option><option>(1) Sólo una vez</option><option>(2) Unas pocas veces</option><option>(3) Muchas veces</option><option>(4) Todo el tiempo</option><option>(0) No sabe / No corresponde</option></select>
+  </div>
+
+  <div class="section-header"><div class="section-dot"></div><div class="section-title">COMPORTAMIENTO SUICIDA</div></div>
+  <p style="font-size:0.8rem;color:#72243e;margin-bottom:1rem;">Marque todos los que correspondan (deben ser eventos diferentes). Debe preguntar sobre todos los tipos.</p>
+
+  <div class="item">
+    <div class="item-num">Intento real</div>
+    <div class="item-desc">Un acto potencialmente autolesivo cometido con al menos un cierto deseo de morir. La intención no necesita ser al 100%.</div>
+    <div class="item-preguntas">• ¿Hiciste algo para tratar de matarte o para dejar de vivir? ¿Qué hiciste?<br>• ¿Te hiciste daño a propósito? ¿Por qué hiciste eso?<br>• ¿Lo hiciste como una manera de poner fin a tu vida?<br>• ¿Querías morirte (aunque fuera un poco)?<br>• ¿Estabas tratando de dejar de vivir?<br>• ¿O pensaste que era posible que podrías haber muerto?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b1','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b1','no')">No</div></div>
+    <input type="hidden" id="b1" value="">
+    <div class="field-label">Nº total de intentos:</div>
+    <input type="number" class="num-field" id="b1n" min="0" placeholder="0">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="b1d" placeholder="Descripción..."></textarea>
+    <div class="field-label">¿Ha tenido la persona un comportamiento autolesivo no suicida?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b1b','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b1b','no')">No</div></div>
+    <input type="hidden" id="b1b" value="">
+    <div class="field-label">¿Ha tenido la persona un comportamiento autolesivo con intención desconocida?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b1c','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b1c','no')">No</div></div>
+    <input type="hidden" id="b1c" value="">
+  </div>
+
+  <div class="item">
+    <div class="item-num">Intento interrumpido</div>
+    <div class="item-desc">Cuando la persona es interrumpida (por una circunstancia ajena a su voluntad) al empezar un acto potencialmente autolesivo.</div>
+    <div class="item-preguntas">• ¿Ha habido algún momento en que empezaste a hacer algo para dejar de vivir, pero alguien o algo te detuvo antes de que hicieras realmente algo? ¿Qué hiciste?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b2','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b2','no')">No</div></div>
+    <input type="hidden" id="b2" value="">
+    <div class="field-label">Nº total de intentos interrumpidos:</div>
+    <input type="number" class="num-field" id="b2n" min="0" placeholder="0">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="b2d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">Intento abortado</div>
+    <div class="item-desc">Cuando la persona empieza a prepararse para un intento de suicidio pero se detiene por sí misma antes de tener un comportamiento autodestructivo.</div>
+    <div class="item-preguntas">• ¿Ha habido algún momento en que empezaste a hacer algo para dejar de vivir, pero cambiaste de idea (te detuviste) antes de que hicieras realmente algo? ¿Qué hiciste?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b3','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b3','no')">No</div></div>
+    <input type="hidden" id="b3" value="">
+    <div class="field-label">Nº total de intentos abortados:</div>
+    <input type="number" class="num-field" id="b3n" min="0" placeholder="0">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="b3d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">Actos o comportamiento preparatorios</div>
+    <div class="item-desc">Actos o preparativos para llevar a cabo un inminente intento de suicidio (estructurar un método específico, prepararse para la muerte).</div>
+    <div class="item-preguntas">• ¿Has hecho algo para estar listo/a para dejar de vivir, como regalar cosas, escribir una nota de despedida, obtener las cosas que necesitas para matarte?</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b4','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b4','no')">No</div></div>
+    <input type="hidden" id="b4" value="">
+    <div class="field-label">Si la respuesta es "sí", describa:</div>
+    <textarea class="desc-field" id="b4d" placeholder="Descripción..."></textarea>
+  </div>
+
+  <div class="item">
+    <div class="item-num">Suicidio consumado</div>
+    <div class="sino-row"><div class="sino-btn" onclick="sel(this,'b5','si')">Sí</div><div class="sino-btn" onclick="sel(this,'b5','no')">No</div></div>
+    <input type="hidden" id="b5" value="">
+    <div class="field-label">Fecha del intento más letal:</div>
+    <input type="text" class="text-field" id="b5f" placeholder="dd/mm/aaaa">
+    <div class="field-label">Grado de letalidad y lesiones:</div>
+    <select class="sel-field" id="b5l"><option value="">Seleccionar...</option><option>0 — No hay daño físico o muy poco daño físico (ej. rasguños superficiales)</option><option>1 — Daño físico menor (ej. habla aletargada, quemaduras de primer grado)</option><option>2 — Daño físico moderado: necesita atención médica</option><option>3 — Daño físico moderadamente grave: necesita hospitalización</option><option>4 — Daño físico grave: necesita cuidado intensivo</option><option>5 — Muerte</option></select>
+    <div class="field-label">Letalidad potencial (solo si letalidad real = 0):</div>
+    <select class="sel-field" id="b5p"><option value="">Seleccionar...</option><option>0 — Comportamiento con poca probabilidad de lesiones</option><option>1 — Comportamiento con probabilidad de lesiones pero no de muerte</option><option>2 — Comportamiento con probabilidad de muerte a pesar de atención médica disponible</option></select>
+  </div>
+
+  <div class="submit-area">
+    <button type="button" class="btn-submit" onclick="enviar()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Enviar evaluación
+    </button>
+    <div class="submit-note">Los resultados se enviarán de forma confidencial al profesional indicado.</div>
+    <div class="error-msg" id="errorMsg">Por favor, introduzca el email del psicólogo/a antes de enviar.</div>
+  </div>
   <div class="success-msg" id="successMsg">
     <div class="success-icon">✅</div>
-    <h2>¡Cuestionario enviado!</h2>
-    <p>Sus respuestas han sido enviadas correctamente al profesional indicado.<br>Puede cerrar esta página.</p>
+    <h2>¡Evaluación enviada!</h2>
+    <p>Los resultados han sido enviados correctamente al profesional indicado.<br>Puede cerrar esta página.</p>
   </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
-const EMAILJS_SERVICE_ID  = 'pepop';
-const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
-emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['IDEACIÓN — Deseos de morir: ¿Ha pensado en estar muerto/a o deseado estar muerto/a o que pudiera quedarse dormido/a y no despertar?', 'IDEACIÓN — Pensamientos suicidas activos no específicos: ¿Ha pensado en hacer algo para dejar de vivir o en matarse?', 'IDEACIÓN — Ideación suicida activa con cualquier método (sin plan): ¿Ha pensado en cómo lo haría para matarse, aunque sin un plan específico?', 'IDEACIÓN — Ideación suicida activa con cierta intención de actuar (sin plan específico): Cuando pensó en hacerlo, ¿pensó que era algo que realmente podría hacer?', 'IDEACIÓN — Ideación suicida activa con plan específico e intención: ¿Ha decidido cómo o cuándo haría algo para matarse?', 'COMPORTAMIENTO — Intento real: ¿Ha hecho algo para tratar de matarse o hacerse daño con intención de morir?', 'COMPORTAMIENTO — Intento interrumpido: ¿Ha habido algún momento en que empezó a hacer algo para matarse pero alguien o algo le detuvo?', 'COMPORTAMIENTO — Intento abortado: ¿Ha empezado a prepararse para un intento pero se detuvo por sí mismo/a?', 'COMPORTAMIENTO — Actos preparatorios: ¿Ha hecho algo para estar listo/a para matarse (regalar cosas, escribir nota, obtener medios)?'];
-const opciones  = ['No', 'Sí'];
-const totalPreguntas = preguntas.length;
-const respuestas = new Array(totalPreguntas).fill(null);
-function renderPreguntas() {
-  const container = document.getElementById('preguntasContainer');
-  preguntas.forEach((p, i) => {
-    const div = document.createElement('div');
-    div.className = 'pregunta';
-    div.id = 'pregunta-' + i;
-    const opHtml = opciones.map((op, j) => `
-      <div class="opcion">
-        <input type="radio" name="p${i}" id="p${i}_${j}" value="${op}" onchange="seleccionar(${i}, '${op}')">
-        <label for="p${i}_${j}">${op}</label>
-      </div>`).join('');
-    div.innerHTML = `
-      <div class="pregunta-header">
-        <div class="pregunta-num">${i+1}</div>
-        <div class="pregunta-text">${p}</div>
-      </div>
-      <div class="opciones-h" style="--cols:${opciones.length}">${opHtml}</div>`;
-    container.appendChild(div);
-  });
+emailjs.init('PXEw-jfntiZISPx6I');
+function sel(btn, id, val) {
+  btn.parentElement.querySelectorAll('.sino-btn').forEach(b => b.className = 'sino-btn');
+  btn.classList.add(val === 'si' ? 'sel-si' : 'sel-no');
+  document.getElementById(id).value = val;
 }
-function seleccionar(idx, valor) {
-  respuestas[idx] = valor;
-  document.getElementById('pregunta-' + idx).classList.add('respondida');
-  actualizarProgreso();
-}
-function actualizarProgreso() {
-  const r = respuestas.filter(x => x !== null).length;
-  document.getElementById('progressFill').style.width = (r/totalPreguntas*100) + '%';
-  document.getElementById('progressLabel').textContent = r + ' de ' + totalPreguntas + ' preguntas respondidas';
-  const emailOk = document.getElementById('email-psicologo').value.includes('@');
-  document.getElementById('btnSubmit').disabled = !(r === totalPreguntas && emailOk);
-}
-function checkEmail() { actualizarProgreso(); }
-async function enviarFormulario() {
+function v(id) { return document.getElementById(id)?.value || '-'; }
+async function enviar() {
   const email = document.getElementById('email-psicologo').value;
-  if (!email.includes('@') || respuestas.some(r => r === null)) {
-    document.getElementById('errorMsg').style.display = 'block'; return;
-  }
-  document.getElementById('errorMsg').style.display = 'none';
-  document.getElementById('btnSubmit').disabled = true;
-  document.getElementById('btnSubmit').textContent = 'Enviando...';
-  let resumen = '';
-  preguntas.forEach((p, i) => { resumen += (i+1) + '. ' + p + ' → ' + respuestas[i] + '\n'; });
+  if (!email.includes('@')) { document.getElementById('errorMsg').style.display='block'; return; }
+  document.getElementById('errorMsg').style.display='none';
+  const r = `IDEACIÓN SUICIDA:
+1. Deseos de morir: ${v('i1')}
+   ${v('i1d')}
+2. Pensamientos suicidas no específicos: ${v('i2')}
+   ${v('i2d')}
+3. Ideación con método sin plan: ${v('i3')}
+   ${v('i3d')}
+4. Ideación con intención sin plan: ${v('i4')}
+   ${v('i4d')}
+5. Ideación con plan e intención: ${v('i5')}
+   ${v('i5d')}
+
+INTENSIDAD:
+Tipo: ${v('int_tipo')}
+Descripción: ${v('int_desc')}
+Frecuencia: ${v('int_freq')}
+
+COMPORTAMIENTO SUICIDA:
+Intento real: ${v('b1')} — Nº intentos: ${v('b1n')}
+${v('b1d')}
+Autolesión no suicida: ${v('b1b')} | Intención desconocida: ${v('b1c')}
+Intento interrumpido: ${v('b2')} — Nº: ${v('b2n')}
+${v('b2d')}
+Intento abortado: ${v('b3')} — Nº: ${v('b3n')}
+${v('b3d')}
+Actos preparatorios: ${v('b4')}
+${v('b4d')}
+Suicidio consumado: ${v('b5')} — Fecha: ${v('b5f')}
+Letalidad: ${v('b5l')}
+Letalidad potencial: ${v('b5p')}`;
   try {
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      email_psicologo: email,
-      cuestionario: 'Escala Columbia para Evaluar el Riesgo de Suicidio (C-SSRS)',
-      respuestas: resumen
-    });
-    document.getElementById('mainForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+    await emailjs.send('pepop','template_b52eu95',{ email_psicologo: email, cuestionario: 'Escala Columbia C-SSRS', respuestas: r });
+    document.getElementById('successMsg').style.display='block';
+    document.getElementById('successMsg').scrollIntoView({behavior:'smooth'});
   } catch(e) {
-    document.getElementById('btnSubmit').disabled = false;
-    document.getElementById('btnSubmit').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Enviar respuestas';
-    document.getElementById('errorMsg').textContent = 'Ha ocurrido un error al enviar. Por favor, inténtelo de nuevo.';
-    document.getElementById('errorMsg').style.display = 'block';
+    document.getElementById('errorMsg').textContent='Error al enviar. Inténtelo de nuevo.';
+    document.getElementById('errorMsg').style.display='block';
   }
 }
 function toggleMenu() {
@@ -200,7 +313,6 @@ function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
   document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
 }
-renderPreguntas();
 </script>
 </body>
 </html>

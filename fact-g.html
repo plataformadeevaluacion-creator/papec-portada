@@ -8,7 +8,13 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff5f8; min-height: 100vh; }
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3.5rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid #ffd6e7; position: sticky; top: 0; z-index: 100; }
+
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3.5rem;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(14px);
+  border-bottom: 1px solid #ffd6e7; position: sticky; top: 0; z-index: 100;
+}
 .logo-wrap { display: flex; align-items: center; gap: 0.6rem; }
 .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: #d4547e; display: flex; align-items: center; justify-content: center; }
 .logo-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; }
@@ -28,7 +34,11 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .mobile-menu a { text-decoration: none; color: #4b1528; font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; }
 .mobile-close { position: absolute; top: 1.4rem; right: 1.5rem; background: none; border: none; font-size: 1.8rem; color: #d4547e; cursor: pointer; }
 @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .hamburger { display: flex; } .nav-links { display: none; } }
-.page-hero { background: linear-gradient(135deg, #fbeaf0 0%, #fff5f8 60%, #ffd6e7 100%); padding: 3rem 3.5rem 2.5rem; border-bottom: 1px solid #ffd6e7; }
+
+.page-hero {
+  background: linear-gradient(135deg, #fbeaf0 0%, #fff5f8 60%, #ffd6e7 100%);
+  padding: 3rem 3.5rem 2.5rem; border-bottom: 1px solid #ffd6e7;
+}
 .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: #993556; margin-bottom: 1.2rem; }
 .breadcrumb a { text-decoration: none; color: #993556; }
 .breadcrumb a:hover { color: #d4547e; }
@@ -38,57 +48,90 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #4b1528; font-weight: 600; margin-bottom: 0.7rem; line-height: 1.2; }
 .page-hero h1 em { font-style: italic; color: #d4547e; }
 .page-hero p { color: #72243e; font-size: 0.92rem; font-weight: 300; line-height: 1.75; max-width: 640px; }
+
 .main { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
 .email-block { background: white; border: 1.5px solid #d4547e; border-radius: 16px; padding: 1.5rem 1.8rem; margin-bottom: 2rem; }
 .email-block label { display: block; font-size: 0.82rem; font-weight: 600; color: #4b1528; margin-bottom: 0.6rem; }
 .email-block input { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #ffd6e7; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; color: #4b1528; outline: none; transition: border-color 0.2s; }
 .email-block input:focus { border-color: #d4547e; }
 .email-hint { font-size: 0.75rem; color: #993556; margin-top: 0.4rem; font-weight: 300; }
+
 .instrucciones { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 1.3rem 1.8rem; margin-bottom: 2rem; font-size: 0.88rem; color: #72243e; line-height: 1.7; font-weight: 300; }
 .instrucciones strong { color: #4b1528; font-weight: 600; }
+
 .progress-label { font-size: 0.75rem; color: #993556; margin-bottom: 0.5rem; text-align: right; }
 .progress-bar { background: #ffd6e7; border-radius: 999px; height: 4px; margin-bottom: 2rem; overflow: hidden; }
 .progress-fill { height: 100%; background: #d4547e; border-radius: 999px; transition: width 0.4s ease; }
-.subescala-header { display: flex; align-items: center; gap: 0.7rem; margin: 2rem 0 1rem; }
+
+/* SUBESCALA HEADER */
+.subescala-header {
+  display: flex; align-items: center; gap: 0.7rem;
+  margin: 2rem 0 1rem;
+}
 .subescala-dot { width: 10px; height: 10px; border-radius: 50%; background: #d4547e; flex-shrink: 0; }
 .subescala-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #4b1528; }
+
 .pregunta { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 1.4rem 1.8rem; margin-bottom: 0.8rem; transition: border-color 0.2s; }
 .pregunta:hover { border-color: #f4c0d1; }
 .pregunta.respondida { border-color: #f4c0d1; background: #fffafc; }
 .pregunta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
 .pregunta-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #d4547e; flex-shrink: 0; line-height: 1; margin-top: 2px; min-width: 22px; }
 .pregunta-text { font-size: 0.9rem; color: #4b1528; line-height: 1.5; font-weight: 400; }
-.opciones-h { display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr); gap: 0.4rem; }
-.opciones-sino { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+
+.opciones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.4rem; }
 .opcion input[type="radio"] { display: none; }
-.opcion label { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; background: #fff5f8; border: 1.5px solid #ffd6e7; border-radius: 10px; padding: 0.6rem 0.4rem; cursor: pointer; transition: all 0.2s; text-align: center; font-size: 0.75rem; color: #72243e; font-weight: 400; line-height: 1.3; }
+.opcion label {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem;
+  background: #fff5f8; border: 1.5px solid #ffd6e7; border-radius: 10px;
+  padding: 0.6rem 0.3rem; cursor: pointer; transition: all 0.2s;
+  text-align: center; font-size: 0.7rem; color: #72243e; font-weight: 400; line-height: 1.3;
+}
 .opcion label:hover { border-color: #f4c0d1; background: #fbeaf0; }
 .opcion input[type="radio"]:checked + label { background: #d4547e; border-color: #d4547e; color: white; font-weight: 500; }
+.opcion-num { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; }
+
 .submit-area { margin-top: 2.5rem; text-align: center; }
 .btn-submit { background: #d4547e; color: white; border: none; padding: 0.9rem 2.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.5rem; }
 .btn-submit:hover { background: #b5446e; transform: translateY(-1px); }
 .btn-submit:disabled { background: #e0a0b5; cursor: not-allowed; transform: none; }
 .submit-note { font-size: 0.78rem; color: #993556; margin-top: 0.8rem; font-weight: 300; }
 .error-msg { color: #c0392b; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+
 .success-msg { display: none; text-align: center; padding: 3rem 2rem; background: white; border: 1px solid #ffd6e7; border-radius: 20px; margin-top: 2rem; }
 .success-icon { font-size: 3rem; margin-bottom: 1rem; }
 .success-msg h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #4b1528; margin-bottom: 0.5rem; }
 .success-msg p { color: #72243e; font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
-@media (max-width: 600px) { .page-hero { padding: 2rem 1.5rem; } .main { padding: 1.5rem 1rem 3.5rem; } .pregunta { padding: 1rem; } }
+
+@media (max-width: 600px) {
+  .page-hero { padding: 2rem 1.5rem; }
+  .main { padding: 1.5rem 1rem 3.5rem; }
+  .opciones { grid-template-columns: repeat(5, 1fr); }
+  .opcion label { font-size: 0.62rem; padding: 0.5rem 0.2rem; }
+  .pregunta { padding: 1rem 1rem; }
+}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="logo-wrap">
-    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4 0-7 3-7 7 0 2.5 1.3 4.7 3.2 6L9 20h6l.8-4C17.7 14.7 19 12.5 19 10c0-4-3-7-7-7z"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="10" y1="17" x2="14" y2="17"/></svg></div>
-    <div><div class="logo-text">PEP<span>OP</span></div><div class="logo-tagline">Plataforma de Evaluación Psico-Oncológica y Paliativa</div></div>
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 3c-4 0-7 3-7 7 0 2.5 1.3 4.7 3.2 6L9 20h6l.8-4C17.7 14.7 19 12.5 19 10c0-4-3-7-7-7z"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="10" y1="17" x2="14" y2="17"/></svg>
+    </div>
+    <div>
+      <div class="logo-text">PEP<span>OP</span></div>
+      <div class="logo-tagline">Plataforma de Evaluación Psico-Oncológica y Paliativa</div>
+    </div>
   </div>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="cuestionarios.html">Cuestionarios</a></li>
     <li><a href="nosotros.html">Nosotros</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
@@ -96,22 +139,36 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <a href="cuestionarios.html" onclick="toggleMenu()">Cuestionarios</a>
   <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
 </div>
+
 <div class="page-hero">
-  <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>Cuestionario de Evaluación Funcional de la Terapia del Cáncer (FACT-G)</span></div>
+  <div class="breadcrumb">
+    <a href="cuestionarios.html">← Cuestionarios</a>
+    <span>/</span>
+    <span>FACT-G</span>
+  </div>
   <div class="tag"><span class="tag-dot"></span>Calidad de Vida</div>
-  <h1>Cuestionario de Evaluación Funcional de la Terapia del Cáncer (<em>FACT-G</em>)</h1>
+  <h1>Cuestionario de Evaluación Funcional de la Terapia del <em>Cáncer</em> (FACT-G)</h1>
   <p>A continuación encontrará una lista de afirmaciones que otras personas con su misma enfermedad consideran importantes. Seleccione un solo número por línea para indicar la respuesta que corresponde a los últimos 7 días.</p>
 </div>
+
 <div class="main">
+
   <div class="email-block">
     <label for="email-psicologo">📧 Email del psicólogo/a</label>
     <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
-  <div class="instrucciones"><strong>Instrucciones:</strong> A continuación encontrará una lista de afirmaciones que otras personas con su misma enfermedad consideran importantes. Seleccione un solo número por línea para indicar la respuesta que corresponde a los últimos 7 días.</div>
-  <div class="progress-label" id="progressLabel">0 de 1479 preguntas respondidas</div>
+
+  <div class="instrucciones">
+    <strong>Instrucciones:</strong> Seleccione un solo número por línea para indicar la respuesta que corresponde a los últimos 7 días. (0 = Nada, 1 = Un poco, 2 = Algo, 3 = Mucho, 4 = Muchísimo)
+  </div>
+
+  <div class="progress-label" id="progressLabel">0 de 27 preguntas respondidas</div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-  <form id="mainForm"><div id="preguntasContainer"></div>
+
+  <form id="mainForm">
+    <div id="preguntasContainer"></div>
+
     <div class="submit-area">
       <button type="button" class="btn-submit" id="btnSubmit" onclick="enviarFormulario()" disabled>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -121,47 +178,65 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
       <div class="error-msg" id="errorMsg">Por favor, complete todas las preguntas y el email del psicólogo/a antes de enviar.</div>
     </div>
   </form>
+
   <div class="success-msg" id="successMsg">
     <div class="success-icon">✅</div>
     <h2>¡Cuestionario enviado!</h2>
     <p>Sus respuestas han sido enviadas correctamente al profesional indicado.<br>Puede cerrar esta página.</p>
   </div>
+
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+
 const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
 const EMAILJS_SERVICE_ID  = 'pepop';
 const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
 emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['[FÍSICO] Me falta energía.', '[FÍSICO] Tengo náuseas.', '[FÍSICO] Debido a mi estado físico, tengo dificultad para atender a las necesidades de mi familia.', '[FÍSICO] Tengo dolor.', '[FÍSICO] Me molestan los efectos secundarios del tratamiento.', '[FÍSICO] Me siento enfermo/a.', '[FÍSICO] Tengo que pasar tiempo acostado/a.', '[SOCIAL] Me siento cercano/a a mis amistades.', '[SOCIAL] Recibo apoyo emocional por parte de mi familia.', '[SOCIAL] Recibo apoyo por parte de mis amistades.', '[SOCIAL] Mi familia ha aceptado mi enfermedad.', '[SOCIAL] Estoy satisfecho/a con la manera en que se comunica mi familia acerca de mi enfermedad.', '[SOCIAL] Me siento cercano/a a mi pareja (o a la persona que es mi principal fuente de apoyo).', '[SOCIAL] Estoy satisfecho/a con mi vida sexual.', '[EMOCIONAL] Me siento triste.', '[EMOCIONAL] Estoy satisfecho/a de cómo me estoy enfrentando a mi enfermedad.', '[EMOCIONAL] Estoy perdiendo las esperanzas en la lucha contra mi enfermedad.', '[EMOCIONAL] Me siento nervioso/a.', '[EMOCIONAL] Me preocupa morir.', '[EMOCIONAL] Me preocupa que mi enfermedad empeore.', '[FUNCIONAL] Puedo trabajar (incluya el trabajo en el hogar).', '[FUNCIONAL] Mi trabajo me satisface (incluya el trabajo en el hogar).', '[FUNCIONAL] Puedo disfrutar de la vida.', '[FUNCIONAL] He aceptado mi enfermedad.', '[FUNCIONAL] Duermo bien.', '[FUNCIONAL] Disfruto con mis pasatiempos de siempre.', '[FUNCIONAL] Estoy satisfecho/a con mi calidad de vida actual.'];
-const opciones  = ['Nada (0)', 'Un poco (1)', 'Algo (2)', 'Mucho (3)', 'Muchísimo (4)'];
-const totalPreguntas = preguntas.length;
+
+const subescalas = [{"titulo": "Estado físico general de salud", "preguntas": ["Me falta energía.", "Tengo náuseas.", "Debido a mi estado físico, tengo dificultad para atender a las necesidades de mi familia.", "Tengo dolor.", "Me molestan los efectos secundarios del tratamiento.", "Me siento enfermo/a.", "Tengo que pasar tiempo acostado/a."]}, {"titulo": "Ambiente familiar y social", "preguntas": ["Me siento cercano/a a mis amistades.", "Recibo apoyo emocional por parte de mi familia.", "Recibo apoyo por parte de mis amistades.", "Mi familia ha aceptado mi enfermedad.", "Estoy satisfecho/a con la manera en que se comunica mi familia acerca de mi enfermedad.", "Me siento cercano/a a mi pareja (o a la persona que es mi principal fuente de apoyo).", "Estoy satisfecho/a con mi vida sexual. (Si prefiere no contestar, marque esta casilla y continúe con la siguiente sección.)"]}, {"titulo": "Estado emocional", "preguntas": ["Me siento triste.", "Estoy satisfecho/a de cómo me estoy enfrentando a mi enfermedad.", "Estoy perdiendo las esperanzas en la lucha contra mi enfermedad.", "Me siento nervioso/a.", "Me preocupa morir.", "Me preocupa que mi enfermedad empeore."]}, {"titulo": "Capacidad de funcionamiento personal", "preguntas": ["Puedo trabajar (incluya el trabajo en el hogar).", "Mi trabajo me satisface (incluya el trabajo en el hogar).", "Puedo disfrutar de la vida.", "He aceptado mi enfermedad.", "Duermo bien.", "Disfruto con mis pasatiempos de siempre.", "Estoy satisfecho/a con mi calidad de vida actual."]}];
+const opciones  = ["Nada (0)", "Un poco (1)", "Algo (2)", "Mucho (3)", "Muchísimo (4)"];
+const totalPreguntas = 27;
 const respuestas = new Array(totalPreguntas).fill(null);
+let globalIdx = 0;
+
 function renderPreguntas() {
   const container = document.getElementById('preguntasContainer');
-  preguntas.forEach((p, i) => {
-    const div = document.createElement('div');
-    div.className = 'pregunta';
-    div.id = 'pregunta-' + i;
-    const opHtml = opciones.map((op, j) => `
-      <div class="opcion">
-        <input type="radio" name="p${i}" id="p${i}_${j}" value="${op}" onchange="seleccionar(${i}, '${op}')">
-        <label for="p${i}_${j}">${op}</label>
-      </div>`).join('');
-    div.innerHTML = `
-      <div class="pregunta-header">
-        <div class="pregunta-num">${i+1}</div>
-        <div class="pregunta-text">${p}</div>
-      </div>
-      <div class="opciones-h" style="--cols:${opciones.length}">${opHtml}</div>`;
-    container.appendChild(div);
+  subescalas.forEach((sub, si) => {
+    const header = document.createElement('div');
+    header.className = 'subescala-header';
+    header.innerHTML = `<div class="subescala-dot"></div><div class="subescala-title">${sub.titulo}</div>`;
+    container.appendChild(header);
+    sub.preguntas.forEach((p, pi) => {
+      const idx = globalIdx;
+      globalIdx++;
+      const div = document.createElement('div');
+      div.className = 'pregunta';
+      div.id = `pregunta-${idx}`;
+      div.innerHTML = `
+        <div class="pregunta-header">
+          <div class="pregunta-num">${idx + 1}</div>
+          <div class="pregunta-text">${p}</div>
+        </div>
+        <div class="opciones-h" style="--cols:${opciones.length}">
+          ${opciones.map((op, j) => `
+            <div class="opcion">
+              <input type="radio" name="p${idx}" id="p${idx}_${j}" value="${op}" onchange="seleccionar(${idx}, '${op}')">
+              <label for="p${idx}_${j}">${op}</label>
+            </div>`).join('')}
+        </div>`;
+      container.appendChild(div);
+    });
   });
 }
+
 function seleccionar(idx, valor) {
   respuestas[idx] = valor;
-  document.getElementById('pregunta-' + idx).classList.add('respondida');
+  document.getElementById(`pregunta-${idx}`).classList.add('respondida');
   actualizarProgreso();
 }
+
 function actualizarProgreso() {
   const r = respuestas.filter(x => x !== null).length;
   document.getElementById('progressFill').style.width = (r/totalPreguntas*100) + '%';
@@ -169,7 +244,9 @@ function actualizarProgreso() {
   const emailOk = document.getElementById('email-psicologo').value.includes('@');
   document.getElementById('btnSubmit').disabled = !(r === totalPreguntas && emailOk);
 }
+
 function checkEmail() { actualizarProgreso(); }
+
 async function enviarFormulario() {
   const email = document.getElementById('email-psicologo').value;
   if (!email.includes('@') || respuestas.some(r => r === null)) {
@@ -179,7 +256,14 @@ async function enviarFormulario() {
   document.getElementById('btnSubmit').disabled = true;
   document.getElementById('btnSubmit').textContent = 'Enviando...';
   let resumen = '';
-  preguntas.forEach((p, i) => { resumen += (i+1) + '. ' + p + ' → ' + respuestas[i] + '\n'; });
+  let gIdx = 0;
+  subescalas.forEach(sub => {
+    resumen += `\n${sub.titulo}:\n`;
+    sub.preguntas.forEach((p, pi) => {
+      resumen += `  ${gIdx + 1}. ${p} → ${respuestas[gIdx]}\n`;
+      gIdx++;
+    });
+  });
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       email_psicologo: email,
@@ -195,11 +279,176 @@ async function enviarFormulario() {
     document.getElementById('errorMsg').style.display = 'block';
   }
 }
+
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('mobileMenu').classList.toggle('open');
   document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
 }
+
+renderPreguntas();
+
+</script>
+
+<script>
+// ── CONFIGURACIÓN EMAILJS ──────────────────────────────────
+const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
+const EMAILJS_SERVICE_ID  = 'pepop';
+const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
+emailjs.init(EMAILJS_PUBLIC_KEY);
+// ──────────────────────────────────────────────────────────
+
+const subescalas = [
+  {
+    titulo: 'En relación a su propia muerte',
+    preguntas: [
+      'La total soledad de la muerte.',
+      'La brevedad de la vida.',
+      'Todas las cosas que perderá al morir.',
+      'Morir joven.',
+      'Cómo será el estar muerto.',
+      'No poder pensar ni experimentar nada nunca más.',
+      'La desintegración del cuerpo después de morir.'
+    ]
+  },
+  {
+    titulo: 'En relación a su propio proceso de morir',
+    preguntas: [
+      'La degeneración física que supone el proceso de morir.',
+      'El dolor que comporta el proceso de morir.',
+      'La degeneración mental del envejecimiento.',
+      'La pérdida de facultades durante el proceso de morir.',
+      'La incertidumbre sobre la valentía con que afrontará el proceso de morir.',
+      'Su falta de control sobre el proceso de morir.',
+      'La posibilidad de morir en un hospital lejos de amigos y familiares.'
+    ]
+  },
+  {
+    titulo: 'En relación a la muerte de otros',
+    preguntas: [
+      'La pérdida de una persona querida.',
+      'Tener que ver su cadáver.',
+      'No poder comunicarse nunca más con ella.',
+      'Lamentar no haberse llevado mejor con ella cuando aún estaba viva.',
+      'Envejecer solo, sin la persona querida.',
+      'Sentirse culpable por el alivio provocado por su muerte.',
+      'Sentirse solo sin ella.'
+    ]
+  },
+  {
+    titulo: 'En relación al proceso de morir de otros',
+    preguntas: [
+      'Tener que estar con alguien que se está muriendo.',
+      'Tener que estar con alguien que quiere hablar de la muerte con usted.',
+      'Ver cómo sufre dolor.',
+      'Observar la degeneración física de su cuerpo.',
+      'No saber cómo gestionar su dolor ante la pérdida de una persona querida.',
+      'Asistir al deterioro de sus facultades mentales.',
+      'Ser consciente de que algún día también vivirá esta experiencia.'
+    ]
+  }
+];
+
+const opciones = ['1\nNada','2','3\nModerado','4','5\nMucho'];
+const totalPreguntas = 28;
+const respuestas = new Array(totalPreguntas).fill(null);
+let globalIdx = 0;
+
+function renderPreguntas() {
+  const container = document.getElementById('preguntasContainer');
+  subescalas.forEach((sub, si) => {
+    const header = document.createElement('div');
+    header.className = 'subescala-header';
+    header.innerHTML = `<div class="subescala-dot"></div><div class="subescala-title">${sub.titulo}</div>`;
+    container.appendChild(header);
+
+    sub.preguntas.forEach((p, pi) => {
+      const idx = globalIdx;
+      globalIdx++;
+      const div = document.createElement('div');
+      div.className = 'pregunta';
+      div.id = `pregunta-${idx}`;
+      div.innerHTML = `
+        <div class="pregunta-header">
+          <div class="pregunta-num">${idx + 1}</div>
+          <div class="pregunta-text">${p}</div>
+        </div>
+        <div class="opciones">
+          ${opciones.map((op, j) => `
+            <div class="opcion">
+              <input type="radio" name="p${idx}" id="p${idx}_${j}" value="${j+1}" onchange="seleccionar(${idx}, ${j+1})">
+              <label for="p${idx}_${j}">
+                <div class="opcion-num">${j+1}</div>
+                <span>${j===0?'Nada':j===2?'Moderado':j===4?'Mucho':''}</span>
+              </label>
+            </div>
+          `).join('')}
+        </div>`;
+      container.appendChild(div);
+    });
+  });
+}
+
+function seleccionar(idx, valor) {
+  respuestas[idx] = valor;
+  document.getElementById(`pregunta-${idx}`).classList.add('respondida');
+  actualizarProgreso();
+}
+
+function actualizarProgreso() {
+  const respondidas = respuestas.filter(r => r !== null).length;
+  const pct = (respondidas / totalPreguntas) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${respondidas} de ${totalPreguntas} preguntas respondidas`;
+  const emailOk = document.getElementById('email-psicologo').value.includes('@');
+  document.getElementById('btnSubmit').disabled = !(respondidas === totalPreguntas && emailOk);
+}
+
+function checkEmail() { actualizarProgreso(); }
+
+async function enviarFormulario() {
+  const email = document.getElementById('email-psicologo').value;
+  if (!email.includes('@') || respuestas.some(r => r === null)) {
+    document.getElementById('errorMsg').style.display = 'block';
+    return;
+  }
+  document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('btnSubmit').disabled = true;
+  document.getElementById('btnSubmit').textContent = 'Enviando...';
+
+  // Construir resumen por subescalas
+  let resumen = '';
+  let gIdx = 0;
+  subescalas.forEach(sub => {
+    resumen += `\n${sub.titulo}:\n`;
+    sub.preguntas.forEach((p, pi) => {
+      resumen += `  ${gIdx + 1}. ${p} → ${respuestas[gIdx]}\n`;
+      gIdx++;
+    });
+  });
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      email_psicologo: email,
+      cuestionario: 'Escala de Miedo a la Muerte de Collett-Lester (CL-FODS)',
+      respuestas: resumen
+    });
+    document.getElementById('clfodsForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  } catch (e) {
+    document.getElementById('btnSubmit').disabled = false;
+    document.getElementById('btnSubmit').innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Enviar respuestas`;
+    document.getElementById('errorMsg').textContent = 'Ha ocurrido un error al enviar. Por favor, inténtelo de nuevo.';
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+
 renderPreguntas();
 </script>
 </body>

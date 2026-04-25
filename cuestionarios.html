@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PAPEC — Cuestionarios</title>
+<title>PEPOP — Cuestionarios</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,6 +34,7 @@ display: flex; align-items: center; justify-content: center;
 .logo-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; }
 .logo-text { font-weight: 600; font-size: 1.2rem; color: #72243e; letter-spacing: 0.06em; }
 .logo-text span { color: #d4547e; }
+.logo-tagline { font-size: 0.62rem; color: #c08090; font-weight: 300; letter-spacing: 0.03em; margin-top: 1px; }
 .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
 .nav-links a { text-decoration: none; color: #993556; font-size: 0.88rem; transition: color 0.2s; }
 .nav-links a:hover { color: #d4547e; }
@@ -180,6 +181,61 @@ nav { padding: 1rem 1.5rem; }
 .main { padding: 1.5rem 1rem 3rem; }
 .cards-grid { grid-template-columns: 1fr; }
 }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #d4547e;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,245,248,0.98);
+  backdrop-filter: blur(16px);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  text-decoration: none;
+  color: #4b1528;
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: #d4547e; }
+.mobile-close {
+  position: absolute;
+  top: 1.4rem; right: 1.5rem;
+  background: none; border: none;
+  font-size: 1.8rem; color: #d4547e;
+  cursor: pointer; line-height: 1;
+}
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+}
 </style>
 </head>
 <body>
@@ -188,7 +244,7 @@ nav { padding: 1rem 1.5rem; }
 <div class="logo-icon">
 <svg viewBox="0 0 24 24"><path d="M12 3c-4 0-7 3-7 7 0 2.5 1.3 4.7 3.2 6L9 20h6l.8-4C17.7 14.7 19 12.5 19 10c0-4-3-7-7-7z"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="10" y1="17" x2="14" y2="17"/></svg>
 </div>
-<div class="logo-text">PAP<span>EC</span></div>
+<div><div class="logo-text">PEP<span>OP</span></div><div class="logo-tagline">Plataforma de Evaluación Psico-Oncológica y Paliativa</div></div>
 </div>
 <ul class="nav-links">
 <li><a href="index.html">Inicio</a></li>
@@ -196,12 +252,29 @@ nav { padding: 1rem 1.5rem; }
 <li><a href="nosotros.html">Nosotros</a></li>
   
 </ul>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="index.html" onclick="toggleMenu()">Inicio</a>
+  <a href="cuestionarios.html" onclick="toggleMenu()">Cuestionarios</a>
+  <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
+</div>
+<script>
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+</script>
 
 <div class="page-hero">
 <div class="tag"><span class="tag-dot"></span>Evaluaciones psicológicas</div>
 <h1>Nuestros <em>cuestionarios</em></h1>
-<p>Accedé a las evaluaciones que tu psicólogo indicó. Cada cuestionario es confidencial y sus resultados serán analizados por tu profesional.</p>
+<p>Acceda a las evaluaciones que su psicólogo ha indicado. Cada cuestionario es confidencial y sus resultados serán analizados por su profesional.</p>
 <div class="search-wrap">
 <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
 <input type="text" id="searchInput" placeholder="Buscar cuestionario..." oninput="filterCards()">
@@ -238,7 +311,7 @@ nav { padding: 1rem 1.5rem; }
 </div>
 <div class="card-desc">Evalúa tres constructos emocionales negativos: depresión por medio de disforia, desesperanza, desvalorización de la vida, anhedonia y falta de interés, ansiedad a través de activación fisiológica, miedo, tensión y respuestas autonómicas y estrés valorando tensión persistente, irritabilidad, dificultad para relajarse y sobreactivación.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfTG7wlFKcMJkoOC-SxMCVBxBdxorMgbUmQ8x5TcjiHnSNvKw/viewform" target="_blank">
+<a class="btn-form" href="dass-21.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -253,7 +326,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la detección y cuantificación de síntomas de ansiedad y depresión en personas adultas, en especial en entornos clínicos, eliminando la influencia de síntomas somáticos que podrían estar relacionados con enfermedades orgánicas.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSeaNChL1kHoeSA0Ou8gin5tdYG5Jm0po2t8Y5-9X8hXbtnL2Q/viewform" target="_blank">
+<a class="btn-form" href="hads.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -268,7 +341,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la presencia e intensidad/gravedad de los síntomas de ansiedad clínica, con especial énfasis en la ansiedad somática (físicos) y afectivo-cognitiva (mentales y emocionales).</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSce8wdgc88aPeGGFBXHE2ZfRDS0Kwsp1PVdHymIuFnF5-MXVQ/viewform" target="_blank">
+<a class="btn-form" href="bai.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -283,7 +356,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel de sintomatología ansiosa como componente del malestar emocional, incluyendo: malestar ansioso (preocupación, aprensión), miedo (temor, pánico), hiperactivación (tensión, nerviosismo e inquietud) y síntomas somáticos de activación (taquicardia, mareo).</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSe6E3iO344BwairnBj5F-X-amTCftT50RqgdaqW3W09rRptnw/viewform" target="_blank">
+<a class="btn-form" href="promis-ansiedad-sf8.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -298,7 +371,7 @@ Completar
 </div>
 <div class="card-desc">Instrumento de cribado y evaluación breve creado para conocer la probabilidad de Trastorno de Ansiedad Generalizada (TAG) y valorar la gravedad de los síntomas de ansiedad.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfSvYMwj1hVaz_IQWwRCrChkFpCHPANgQT2xwXJoiERQK_dew/viewform" target="_blank">
+<a class="btn-form" href="gad-7.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -313,7 +386,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la presencia e intensidad/gravedad de los síntomas depresivos en adolescentes y adultos, incluyendo componentes afectivos, cognitivos, motivaciones y somáticos.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScSaK1YpXftdBIcqyAZeWyDdcbp2U4D1zTf-Noc5PnZiYjDxA/viewform" target="_blank">
+<a class="btn-form" href="bdi-ii.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -328,7 +401,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la presencia y gravedad de los síntomas depresivos en adultos, teniendo en cuenta los criterios diagnósticos del episodio depresivo mayor del DSM-IV/DSM-5.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSdwvt0944WrsWKmpdeZ3l1uOvUQWvVL1xGp43on91XmEAfMgg/viewform" target="_blank">
+<a class="btn-form" href="phq-9.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -343,7 +416,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel de sintomatología depresiva como componente de malestar emocional, incluyendo: estado de ánimo negativo (tristeza, culpa), autovaloración negativa (autocrítica, sentimientos de inutilidad), cognición social (soledad, alienación interpersonal) y disminución del afecto positivo.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSegqhQfrtg9VNdU4DZQ2HncKEYwF_Su-DTK7GZoGDSXDCTSyw/viewform" target="_blank">
+<a class="btn-form" href="promis-depresion-cancer.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -358,7 +431,7 @@ Completar
 </div>
 <div class="card-desc">Cribado de la presencia e intensidad de la sintomatología depresiva en adultos mayores (≥ 65 años), incluyendo síntomas afectivos y cognitivos asociados tales como: estado de ánimo depresivo, anhedonia, pérdida de motivación, desesperanza y retraimiento social.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfyW_ofv7FedP8EZSmDkqfbEsE2aj3FIfTqHjnLIyHvhorZGg/viewform" target="_blank">
+<a class="btn-form" href="gds-15.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -373,7 +446,7 @@ Completar
 </div>
 <div class="card-desc">Mide el síndrome de desmoralización, un estado de angustia existencial y afrontamiento fallido que supone pérdida de sentido de la vida, desesperanza, sentimientos de fracaso y problemas para enfrentarse a situaciones estresantes graves (p. ej., enfermedad avanzada).</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScb0Tg523RkFDPmh6cJ2f8nXyMyD9pgLo4DIUEM8rAghYXBkQ/viewform" target="_blank">
+<a class="btn-form" href="ds-ii.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -388,7 +461,7 @@ Completar
 </div>
 <div class="card-desc">Identifica los orígenes de malestar relacionados con la dignidad en personas con enfermedad grave. Examina el sufrimiento físico, emocional, existencial y social que influye en la dignidad percibida y ayuda a programar intervenciones clínico-psicosociales orientadas en la persona.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSdcP0n90mLks_-ncZRf63lIE0gNBg3QB68unzZKrZnw8-WCqg/viewform" target="_blank">
+<a class="btn-form" href="idp.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -403,7 +476,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel global de autocompasión, incluyendo ítems que representan las seis dimensiones teóricas: amabilidad hacia uno mismo, autocrítica, humanidad compartida, aislamiento, mindfulness y sobreidentificación.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSdoSnMCaeSNf8aibvS_dumwoZBS5TmSzhKE8WgDqHvybJSGSA/viewform" target="_blank">
+<a class="btn-form" href="scs-sf.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -418,7 +491,7 @@ Completar
 </div>
 <div class="card-desc">Cuantifica el miedo a la progresión o el temor de que el proceso oncológico empeore o presente recaída. Permite conocer los valores a nivel clínico de ansiedad vinculados con la enfermedad.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSd0yCyPQ7OZdR57eyuxwef7ohOqli4ns9QMJpZBcWXxsKzlBw/viewform" target="_blank">
+<a class="btn-form" href="fop-q-sf.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -433,7 +506,7 @@ Completar
 </div>
 <div class="card-desc">Valora los niveles de preocupación por el cáncer en individuos sanos con historia familiar de cáncer, para poder realizar estudios preventivos o clínicos.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSf5nubomnwKiBihsnzUVBFLpqLgxUU3WHi02kjszjwYEjidGQ/viewform" target="_blank">
+<a class="btn-form" href="epc.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -481,7 +554,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el miedo y las actitudes ante la muerte como un constructo multidimensional que incluye el miedo a la propia muerte, el miedo al proceso de morir, el miedo a la muerte de otras personas y el miedo al proceso de morir de otras personas.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSf8AgHGhr7FNDgRk727NGqsHZwrYtYvXTEiLjucR7f3dzZflA/viewform" target="_blank">
+<a class="btn-form" href="cl-fods.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -496,7 +569,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el malestar emocional relacionado con la muerte y el proceso de morir, incluyendo preocupaciones sobre el sufrimiento físico futuro, la pérdida de autonomía, el impacto en los seres queridos e incertidumbre existencial.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SjTdDLqB-6FZEc80MaaUKEHT71oQyMq2vJFNsXuspWTPyA/viewform" target="_blank">
+<a class="btn-form" href="dadds-sp.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -523,7 +596,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel de apoyo social percibido por una persona, identificando la disponibilidad de distintos tipos de apoyo en su entorno y su influencia en el bienestar físico y psicológico.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSckaioxeGK5TC6l5F0l1Tofnwvj95gQoTnHgoQDO_lkWb5hdw/viewform" target="_blank">
+<a class="btn-form" href="mos-sss.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -538,7 +611,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel de apoyo social percibido específicamente en relación con tres fuentes: familia, amigos y una persona significativa.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSds0yy8Zy-dzw9Pnm98OW0NmGLkBe0fWWwQ6zwrrbIy6lZM3Q/viewform" target="_blank">
+<a class="btn-form" href="mspss.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -590,7 +663,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la calidad de vida relacionada con la salud en pacientes oncológicos, identificando el impacto del cáncer y su tratamiento en las dimensiones físicas, psicológicas, funcionales y sociales del bienestar.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfi_2Y8XeH0K8EGSACEfrUy7ayI2qtuHSGXG1UqYwSachlxiA/viewform" target="_blank">
+<a class="btn-form" href="eortc-qlq-c30.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -605,7 +678,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la calidad de vida relacionada con la salud en pacientes oncológicos, identificando el impacto del cáncer y su tratamiento en el bienestar físico, emocional, social y funcional.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfXq-aFuBrS5pZFz4IC1n39TRAldclI3gBpwJqCxiltWwVLAA/viewform" target="_blank">
+<a class="btn-form" href="fact-g.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -632,7 +705,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa y cuantifica el nivel de miedo a la recurrencia del cáncer en personas supervivientes que han finalizado el tratamiento primario, facilitando su evaluación clínica y orientando el acompañamiento psicológico.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSeLx5wCrLVvne_jYJxgBQY2jbUpx8RXIb7VYF25xfyWjRR0jg/viewform" target="_blank">
+<a class="btn-form" href="cmrc.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -647,7 +720,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el nivel general de miedo a la recurrencia del cáncer en pacientes oncológicos, identificando preocupaciones, pensamientos intrusivos y temores relacionados con la reaparición de la enfermedad.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfGVOSOMvoivsuOclEbduj9G71iaHa5-5Y6gy-7eEcA-bsh8w/viewform" target="_blank">
+<a class="btn-form" href="egmrc.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -680,7 +753,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la intensidad del dolor y su interferencia en la vida diaria, con el fin de monitorizar su evolución, valorar su impacto funcional y planificar tratamientos analgésicos.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/1ow-E2jIf55_Hb_2mn2j-jEkBr7wZsy9YXhMJqCkQjpw/preview" target="_blank">
+<a class="btn-form" href="cbd.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -695,7 +768,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la experiencia subjetiva del dolor, incluyendo sus componentes sensoriales y afectivos, así como la intensidad y cualidad del mismo.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfi3QLM43GMN2HB8hasvE5YTjEEUC2a7axQSnqi8v2xXICdwQ/viewform" target="_blank">
+<a class="btn-form" href="sf-mpq.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -728,7 +801,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la calidad subjetiva del sueño y la presencia de alteraciones relacionadas con el mismo, considerando satisfacción, latencia, duración, eficiencia y presencia de despertares nocturnos.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScTsaBUJt7BcHPm1EPlMwu2UUU-tXgf8bl4y01M_hQ4tX82xg/viewform" target="_blank">
+<a class="btn-form" href="cos.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -743,7 +816,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la calidad del sueño en el último mes mediante el análisis de componentes como calidad subjetiva, latencia, duración, eficiencia habitual, perturbaciones, uso de medicación y disfunción diurna.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSc23AZz6ovEyFIf5m5iU27m2h6Xwz60KsbOY367QstnQ-k16A/viewform" target="_blank">
+<a class="btn-form" href="psqi.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -777,7 +850,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el funcionamiento cognitivo global mediante la exploración de múltiples dominios: atención, memoria, lenguaje, funciones ejecutivas, habilidades visuoespaciales y orientación.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScFv65ssjNvuTb0avrPOtTXQ5GsIrXO-gSlaF08_UBIU_GeqQ/viewform" target="_blank">
+<a class="btn-form" href="moca.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -792,7 +865,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el estado cognitivo general mediante orientación temporal y espacial, memoria inmediata y diferida, atención, cálculo, lenguaje y habilidades constructivas.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSfEtl4HBfg6iKCj3jtQ86KeO9GKZ-e072HzHtTq9qez_pELKg/viewform" target="_blank">
+<a class="btn-form" href="mmse.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -837,7 +910,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa el malestar psicológico general y detecta posibles trastornos psiquiátricos en población general y clínica, siendo útil para el cribado, la detección temprana y el seguimiento clínico.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSe0cng3usAfAtdni4YRcIT-gMt-mrgufDFs43M-OkyhLb9Ifw/viewform" target="_blank">
+<a class="btn-form" href="ghq-28.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>
@@ -852,7 +925,7 @@ Completar
 </div>
 <div class="card-desc">Evalúa la carga subjetiva percibida por los cuidadores informales de personas en situación de dependencia, permitiendo la detección de sobrecarga, la evaluación clínica y la planificación de apoyos.</div>
 <div class="card-footer">
-<a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSftyonrBLnAsWHHQEb697X6VJjwmcsLXOxmo3FaIPJ-u_Gv6g/viewform" target="_blank">
+<a class="btn-form" href="zarit.html">
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
 Completar
 </a>

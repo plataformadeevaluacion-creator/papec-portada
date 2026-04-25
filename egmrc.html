@@ -43,24 +43,26 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .email-block input:focus { border-color: #d4547e; }
 .email-hint { font-size: 0.75rem; color: #993556; margin-top: 0.4rem; font-weight: 300; }
 .pregunta { background: white; border: 1px solid #ffd6e7; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
-.pregunta-text { font-size: 1.1rem; color: #4b1528; line-height: 1.6; font-weight: 500; margin-bottom: 2rem; text-align: center; }
-.slider-wrap { padding: 0 0.5rem; }
-.slider-labels { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.78rem; color: #993556; }
-input[type=range] { width: 100%; -webkit-appearance: none; height: 6px; border-radius: 999px; background: #ffd6e7; outline: none; }
-input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #d4547e; cursor: pointer; }
-.slider-value { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: #d4547e; margin-top: 1rem; }
-.slider-sublabel { text-align: center; font-size: 0.78rem; color: #993556; margin-top: 0.2rem; }
+.pregunta-text { font-size: 1rem; color: #4b1528; line-height: 1.6; font-weight: 500; margin-bottom: 2rem; text-align: center; }
+.slider-labels { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.75rem; color: #993556; font-weight: 500; }
+.scale-btns { display: grid; grid-template-columns: repeat(11, 1fr); gap: 0.3rem; }
+.scale-btn { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.scale-btn input[type="radio"] { display: none; }
+.scale-btn label { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 1.5px solid #ffd6e7; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: 600; color: #72243e; background: #fff5f8; transition: all 0.2s; }
+.scale-btn label:hover { border-color: #f4c0d1; background: #fbeaf0; }
+.scale-btn input[type="radio"]:checked + label { background: #d4547e; border-color: #d4547e; color: white; }
+.scale-value { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: #d4547e; margin-top: 1rem; }
 .submit-area { margin-top: 2rem; text-align: center; }
 .btn-submit { background: #d4547e; color: white; border: none; padding: 0.9rem 2.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
 .btn-submit:hover { background: #b5446e; }
 .btn-submit:disabled { background: #e0a0b5; cursor: not-allowed; }
-.submit-note { font-size: 0.78rem; color: #993556; margin-top: 0.8rem; font-weight: 300; }
+.submit-note { font-size: 0.78rem; color: #993556; margin-top: 0.8rem; }
 .error-msg { color: #c0392b; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
 .success-msg { display: none; text-align: center; padding: 3rem 2rem; background: white; border: 1px solid #ffd6e7; border-radius: 20px; }
 .success-icon { font-size: 3rem; margin-bottom: 1rem; }
 .success-msg h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #4b1528; margin-bottom: 0.5rem; }
 .success-msg p { color: #72243e; font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
-@media (max-width: 600px) { .page-hero { padding: 2rem 1.5rem; } .main { padding: 1.5rem 1rem 3.5rem; } }
+@media (max-width: 500px) { .scale-btns { grid-template-columns: repeat(6, 1fr); } .scale-btn label { font-size: 0.68rem; } }
 </style>
 </head>
 <body>
@@ -82,78 +84,98 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px;
   <a href="cuestionarios.html" onclick="toggleMenu()">Cuestionarios</a>
   <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
 </div>
+
 <div class="page-hero">
   <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>EGMRC</span></div>
   <div class="tag"><span class="tag-dot"></span>Síntomas Específicos</div>
   <h1>Escala General del Miedo a la Recurrencia del <em>Cáncer</em> (EGMRC)</h1>
-  <p>Escala de un solo ítem que evalúa el nivel global de miedo a que el cáncer vuelva a aparecer, mediante una escala de 0 a 100.</p>
+  <p>Escala de un solo ítem que evalúa el nivel global de miedo a que el cáncer reaparezca, mediante una escala de 0 a 100.</p>
 </div>
+
 <div class="main">
   <div class="email-block">
     <label for="email-psicologo">📧 Email del psicólogo/a</label>
     <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
+
   <div class="pregunta">
     <div class="pregunta-text">Por favor, indique en la siguiente escala cuál es su nivel de miedo por volver a tener cáncer</div>
-    <div class="slider-wrap">
-      <div class="slider-labels"><span>0 — Ningún miedo</span><span>100 — Muchísimo miedo</span></div>
-      <input type="range" id="slider" min="0" max="100" value="50" oninput="updateSlider()">
-      <div class="slider-value" id="sliderVal">50</div>
-      <div class="slider-sublabel" id="sliderLabel">Miedo moderado</div>
+    <div class="slider-labels">
+      <span>0 — Ningún miedo</span>
+      <span>100 — Muchísimo miedo</span>
     </div>
+    <div class="scale-btns" id="scaleBtns"></div>
+    <div class="scale-value" id="scaleVal">—</div>
   </div>
-  <form id="mainForm">
-    <div class="submit-area">
-      <button type="button" class="btn-submit" id="btnSubmit" onclick="enviarFormulario()" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Enviar respuesta
-      </button>
-      <div class="submit-note">Su respuesta se enviará de forma confidencial al profesional indicado.</div>
-      <div class="error-msg" id="errorMsg">Por favor, introduzca el email del psicólogo/a antes de enviar.</div>
-    </div>
-  </form>
+
+  <div class="submit-area">
+    <button type="button" class="btn-submit" id="btnSubmit" onclick="enviarFormulario()" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Enviar respuesta
+    </button>
+    <div class="submit-note">Su respuesta se enviará de forma confidencial al profesional indicado.</div>
+    <div class="error-msg" id="errorMsg">Por favor, introduzca el email del psicólogo/a antes de enviar.</div>
+  </div>
+
   <div class="success-msg" id="successMsg">
     <div class="success-icon">✅</div>
     <h2>¡Respuesta enviada!</h2>
     <p>Su respuesta ha sido enviada correctamente al profesional indicado.<br>Puede cerrar esta página.</p>
   </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
 emailjs.init('PXEw-jfntiZISPx6I');
-function updateSlider() {
-  const v = document.getElementById('slider').value;
-  document.getElementById('sliderVal').textContent = v;
-  const labels = ['Ningún miedo','Miedo muy leve','Miedo leve','Miedo moderado','Miedo considerable','Miedo alto','Miedo muy alto','Miedo extremo'];
-  document.getElementById('sliderLabel').textContent = labels[Math.floor(v/13)] || 'Miedo extremo';
+let valorSeleccionado = null;
+
+// Render 0,10,20,...,100
+const container = document.getElementById('scaleBtns');
+for (let v = 0; v <= 100; v += 10) {
+  const div = document.createElement('div');
+  div.className = 'scale-btn';
+  div.innerHTML = `
+    <input type="radio" name="egmrc" id="v${v}" value="${v}" onchange="seleccionar(${v})">
+    <label for="v${v}">${v}</label>`;
+  container.appendChild(div);
 }
-function checkEmail() {
+
+function seleccionar(v) {
+  valorSeleccionado = v;
+  document.getElementById('scaleVal').textContent = v;
   const emailOk = document.getElementById('email-psicologo').value.includes('@');
   document.getElementById('btnSubmit').disabled = !emailOk;
 }
+
+function checkEmail() {
+  const emailOk = document.getElementById('email-psicologo').value.includes('@');
+  document.getElementById('btnSubmit').disabled = !(valorSeleccionado !== null && emailOk);
+}
+
 async function enviarFormulario() {
   const email = document.getElementById('email-psicologo').value;
-  const valor = document.getElementById('slider').value;
-  if (!email.includes('@')) { document.getElementById('errorMsg').style.display='block'; return; }
-  document.getElementById('errorMsg').style.display='none';
-  document.getElementById('btnSubmit').disabled=true;
-  document.getElementById('btnSubmit').textContent='Enviando...';
+  if (!email.includes('@') || valorSeleccionado === null) {
+    document.getElementById('errorMsg').style.display = 'block'; return;
+  }
+  document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('btnSubmit').disabled = true;
+  document.getElementById('btnSubmit').textContent = 'Enviando...';
   try {
-    await emailjs.send('pepop','template_b52eu95',{
+    await emailjs.send('pepop', 'template_b52eu95', {
       email_psicologo: email,
       cuestionario: 'Escala General del Miedo a la Recurrencia del Cáncer (EGMRC)',
-      respuestas: 'Nivel de miedo a la recurrencia (0-100): ' + valor
+      respuestas: `Nivel de miedo a la recurrencia (0-100): ${valorSeleccionado}`
     });
-    document.getElementById('mainForm').style.display='none';
-    document.getElementById('successMsg').style.display='block';
+    document.getElementById('successMsg').style.display = 'block';
   } catch(e) {
-    document.getElementById('btnSubmit').disabled=false;
-    document.getElementById('btnSubmit').textContent='Enviar respuesta';
-    document.getElementById('errorMsg').textContent='Error al enviar. Por favor, inténtelo de nuevo.';
-    document.getElementById('errorMsg').style.display='block';
+    document.getElementById('btnSubmit').disabled = false;
+    document.getElementById('btnSubmit').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Enviar respuesta';
+    document.getElementById('errorMsg').textContent = 'Error al enviar. Inténtelo de nuevo.';
+    document.getElementById('errorMsg').style.display = 'block';
   }
 }
+
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('mobileMenu').classList.toggle('open');

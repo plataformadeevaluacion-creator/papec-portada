@@ -100,7 +100,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>Cuestionario Oviedo de Calidad de Sueño (COS)</span></div>
   <div class="tag"><span class="tag-dot"></span>Síntomas Específicos</div>
   <h1>Cuestionario Oviedo de Calidad de Sueño (<em>COS</em>)</h1>
-  <p>A continuación se presentan preguntas sobre la calidad de su sueño durante el último mes. Por favor, seleccione la opción que mejor describe su experiencia.</p>
+  <p>A continuación se presentan preguntas sobre la calidad de su sueño durante el último mes. Por favor, seleccione la opción que mejor describe su experiencia. La escala va de 1 a 5; el significado varía según cada pregunta (se indica entre paréntesis).</p>
 </div>
 <div class="main">
   <div class="email-block">
@@ -108,8 +108,8 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
-  <div class="instrucciones"><strong>Instrucciones:</strong> A continuación se presentan preguntas sobre la calidad de su sueño durante el último mes. Por favor, seleccione la opción que mejor describe su experiencia.</div>
-  <div class="progress-label" id="progressLabel">0 de 1002 preguntas respondidas</div>
+  <div class="instrucciones"><strong>Instrucciones:</strong> A continuación se presentan preguntas sobre la calidad de su sueño durante el último mes. Por favor, seleccione la opción que mejor describe su experiencia. La escala va de 1 a 5; el significado varía según cada pregunta (se indica entre paréntesis).</div>
+  <div class="progress-label" id="progressLabel">0 de 1326 preguntas respondidas</div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   <form id="mainForm"><div id="preguntasContainer"></div>
     <div class="submit-area">
@@ -133,7 +133,7 @@ const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
 const EMAILJS_SERVICE_ID  = 'pepop';
 const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
 emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['¿Cómo de satisfecho ha estado con su sueño durante el último mes?', '¿Cuántos días a la semana ha tenido dificultades para conciliar el sueño?', '¿Cuántos días a la semana ha tenido dificultades para permanecer dormido?', '¿Cuántos días a la semana ha tenido dificultades para lograr un sueño reparador?', '¿Cuántos días a la semana ha tenido dificultades para despertar a la hora habitual?', '¿Cuántos días a la semana ha tenido excesiva somnolencia?', '¿Cuánto tiempo ha tardado en dormirse, una vez que lo intentaba?', '¿Cuántas veces se ha despertado por la noche?', '¿Ha notado que se despertaba antes de lo habitual? ¿Cuánto tiempo antes?', '¿Cuántas horas ha dormido cada noche en relación a las horas que permaneció en cama? (eficiencia del sueño)', '¿Cuántos días a la semana ha estado preocupado o ha notado cansancio por no haber dormido bien la noche anterior?', '¿Cuántos días a la semana se ha sentido demasiado somnoliento durante el día o ha dormido más de lo habitual por la noche?'];
+const preguntas = ['¿Cómo de satisfecho ha estado con su sueño durante el último mes? (1=Muy insatisfecho, 5=Muy satisfecho)', '¿Cuántos días a la semana ha tenido dificultades para conciliar el sueño en la primera media hora? (1=Ningún día, 5=Todos los días)', '¿Cuántos días a la semana se ha despertado durante la noche? (1=Ningún día, 5=Todos los días)', '¿Cuántos días a la semana ha tenido dificultades para lograr un sueño reparador? (1=Ningún día, 5=Todos los días)', '¿Cuántos días a la semana ha tenido dificultades para despertar a la hora habitual? (1=Ningún día, 5=Todos los días)', '¿Cuántos días a la semana ha tenido excesiva somnolencia durante el día? (1=Ningún día, 5=Todos los días)', '¿Cuánto tiempo ha tardado normalmente en dormirse, una vez que lo intentaba? (1=Menos de 15 min, 5=Más de 45 min)', '¿Cuántas veces se ha despertado por la noche? (1=Ninguna, 5=4 o más veces)', '¿Se ha despertado antes de lo habitual? ¿Cuánto tiempo antes? (1=No me he despertado antes, 5=Más de 2 horas antes)', '¿Cuántas horas ha dormido cada noche? (1=Más de 7 horas, 5=Menos de 4 horas)', '¿Cuántos días a la semana ha estado preocupado o ha notado cansancio por no haber dormido bien? (1=Ningún día, 5=Todos los días)', '¿Cuántos días a la semana se ha sentido demasiado somnoliento durante el día? (1=Ningún día, 5=Todos los días)'];
 const opciones  = ['1', '2', '3', '4', '5'];
 const totalPreguntas = preguntas.length;
 const respuestas = new Array(totalPreguntas).fill(null);

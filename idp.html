@@ -100,7 +100,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>Inventario de Dignidad del Paciente (IDP)</span></div>
   <div class="tag"><span class="tag-dot"></span>Medidas de Screening y Malestar Emocional</div>
   <h1>Inventario de Dignidad del Paciente (<em>IDP</em>)</h1>
-  <p>A continuación se presentan una serie de afirmaciones sobre cómo se puede sentir una persona cuando está enferma. Por favor, indique en qué medida cada afirmación describe su situación en este momento.</p>
+  <p>Para cada cuestión, por favor, indique con una X si está de acuerdo o en desacuerdo.</p>
 </div>
 <div class="main">
   <div class="email-block">
@@ -108,8 +108,8 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
-  <div class="instrucciones"><strong>Instrucciones:</strong> A continuación se presentan una serie de afirmaciones sobre cómo se puede sentir una persona cuando está enferma. Por favor, indique en qué medida cada afirmación describe su situación en este momento.</div>
-  <div class="progress-label" id="progressLabel">0 de 1206 preguntas respondidas</div>
+  <div class="instrucciones"><strong>Instrucciones:</strong> Para cada cuestión, por favor, indique con una X si está de acuerdo o en desacuerdo.</div>
+  <div class="progress-label" id="progressLabel">0 de 1814 preguntas respondidas</div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   <form id="mainForm"><div id="preguntasContainer"></div>
     <div class="submit-area">
@@ -133,8 +133,8 @@ const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
 const EMAILJS_SERVICE_ID  = 'pepop';
 const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
 emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['Me preocupa ser una carga para las personas que me rodean.', 'Siento que mi vida no tiene sentido ni propósito.', 'Me siento incapaz de hacer las cosas que son importantes para mí.', 'Me siento deprimido/a o con el ánimo bajo.', 'Me siento ansioso/a o con miedo.', 'No sé lo que me depara el futuro.', 'Me resulta difícil afrontar lo que me está pasando.', 'Me siento fuera de control de la situación.', 'Siento que no soy la misma persona que era.', 'No me siento capaz de aceptar las cosas como están.', 'Siento que he perdido mi dignidad.', 'No siento que mi vida tenga valor.', 'Siento que mi cuerpo me ha fallado.', 'Siento vergüenza por mis problemas físicos o por mi aspecto.', 'Me siento como si no fuera «yo mismo/a».', 'Siento que no puedo contribuir a nada.', 'No me siento respetado/a por los demás.', 'Siento que la enfermedad me ha quitado aquello que más valoro.', 'Me preocupa mi muerte y el proceso de morir.', 'Me siento solo/a.', 'Tengo asuntos pendientes o cosas que quisiera resolver.', 'No me siento en paz conmigo mismo/a.', 'Siento que mi vida ha perdido continuidad.', 'Siento que no tengo el apoyo espiritual que necesito.', 'No me siento capaz de reconciliarme con el pasado.'];
-const opciones  = ['En absoluto (0)', 'Un poco (1)', 'Moderadamente (2)', 'Bastante (3)', 'Enormemente (4)'];
+const preguntas = ['No ser tratado con respeto o comprensión por parte de los demás.', 'Sentirme tratado con respeto por el personal sanitario que me atiende.', 'Ser capaz de tomar mis propias decisiones.', 'Participar en las decisiones sobre mi tratamiento.', 'El personal sanitario me explica con detalle los procedimientos que me realizan.', 'Sentirme desanimado.', 'Sentirme con ansiedad o nerviosismo.', 'Sentir incertidumbre respecto a mi enfermedad, tratamiento y preocuparme sobre mi futuro.', 'No sentirme estimado o valorado.', 'Sentir que la vida ya no tiene sentido o propósito.', 'Sentir que no he hecho ninguna aportación significativa o duradera en toda mi vida.', 'Sentir que tengo asuntos pendientes (ej. cosas sin decir o inacabadas).', 'Sentirme una carga para los demás.', 'No sentirme apoyado por mi familia y mi grupo de amigos.', 'No sentirme apoyado por el personal sanitario que me atiende.', 'Sentirme incapaz de «combatir» mentalmente los retos que me presenta mi enfermedad ni de aceptar las cosas como son.', 'Sentir que mi enfermedad y mis cuidados me han hecho perder intimidad.', 'Se mantiene mi privacidad a la hora de realizar los cuidados.', 'No ser capaz de llevar a cabo actividades básica de la vida diaria (p.e. asearme, vestirme).', 'No ser capaz de atender mis necesidades corporales de forma autónoma (p.e. requerir asistencia en actividades relacionadas con ir al baño).', 'Experimentar síntomas físicamente angustiosos (como dolor, dificultad para respirar, nauseas).', 'Sentir que ha cambiado significativamente la forma en que los demás me ven.', 'No ser capaz de continuar con mi rutina diaria.', 'No ser capaz de llevar a cabo roles importantes (ej. esposo/a, padre o madre).', 'Me siento tratado con igualdad respecto a los demás pacientes por el personal sanitario que me atiende.'];
+const opciones  = ['Totalmente en desacuerdo (1)', 'En desacuerdo (2)', 'Ni de acuerdo ni en desacuerdo (3)', 'De acuerdo (4)', 'Totalmente de acuerdo (5)'];
 const totalPreguntas = preguntas.length;
 const respuestas = new Array(totalPreguntas).fill(null);
 function renderPreguntas() {

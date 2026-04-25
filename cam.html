@@ -109,7 +109,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
   <div class="instrucciones"><strong>Instrucciones:</strong> El diagnóstico de delirium requiere los criterios 1 y 2, más al menos uno de los criterios 3 o 4. Administrado por el profesional sanitario.</div>
-  <div class="progress-label" id="progressLabel">0 de 569 preguntas respondidas</div>
+  <div class="progress-label" id="progressLabel">0 de 537 preguntas respondidas</div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   <form id="mainForm"><div id="preguntasContainer"></div>
     <div class="submit-area">
@@ -133,8 +133,8 @@ const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
 const EMAILJS_SERVICE_ID  = 'pepop';
 const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
 emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['1. Comienzo agudo y curso fluctuante: ¿Ha observado un cambio agudo en el estado mental del paciente que tiende a aparecer y desaparecer o fluctúa en gravedad?', '2. Alteración de la atención: ¿El paciente se distrae con facilidad y/o tiene dificultad para seguir una conversación o fijar la atención?', '3. Pensamiento desorganizado: ¿El paciente manifiesta ideas o conversaciones incoherentes, o confunde a las personas que le rodean?', '4. Alteración del nivel de conciencia: ¿Está alterado el nivel de conciencia del paciente? (vigilante, letárgico, estuporoso)'];
-const opciones  = ['No', 'Sí'];
+const preguntas = ['Comienzo agudo y curso fluctuante: ¿Ha observado un cambio agudo en el estado mental del paciente que tiende a aparecer y desaparecer, o fluctúa en gravedad?', 'Alteración de la atención: ¿El paciente se distrae con facilidad y/o tiene dificultad para seguir una conversación?', 'Pensamiento desorganizado: ¿El paciente manifiesta ideas o conversaciones incoherentes o confunde a las personas que le rodean?', 'Alteración del nivel de conciencia: ¿Está alterado el nivel de conciencia del paciente? (vigilante, letárgico, estuporoso)'];
+const opciones  = ['Sí', 'No'];
 const totalPreguntas = preguntas.length;
 const respuestas = new Array(totalPreguntas).fill(null);
 function renderPreguntas() {

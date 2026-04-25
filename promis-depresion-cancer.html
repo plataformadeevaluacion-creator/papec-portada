@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PEPOP — PROMIS Depresión — Banco de Ítems v1.0 (Cáncer)</title>
+<title>PEPOP — PROMIS Depresión SF 8a</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -97,10 +97,10 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
 </div>
 <div class="page-hero">
-  <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>PROMIS Depresión — Banco de Ítems v1.0 (Cáncer)</span></div>
+  <div class="breadcrumb"><a href="cuestionarios.html">← Cuestionarios</a><span>/</span><span>PROMIS Depresión SF 8a</span></div>
   <div class="tag"><span class="tag-dot"></span>Medidas de Screening y Malestar Emocional</div>
-  <h1><em>PROMIS</em> Depresión — Banco de Ítems v1.0 (Cáncer)</h1>
-  <p>Responda a cada enunciado marcando una casilla por línea. En los últimos 7 días…</p>
+  <h1><em>PROMIS</em> Depresión SF 8a</h1>
+  <p>Responda a cada pregunta marcando una casilla por línea. En los últimos 7 días…</p>
 </div>
 <div class="main">
   <div class="email-block">
@@ -108,8 +108,8 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <input type="email" id="email-psicologo" placeholder="correo@ejemplo.com" oninput="checkEmail()">
     <div class="email-hint">Los resultados se enviarán automáticamente a esta dirección al completar el cuestionario.</div>
   </div>
-  <div class="instrucciones"><strong>Instrucciones:</strong> Responda a cada enunciado marcando una casilla por línea. En los últimos 7 días…</div>
-  <div class="progress-label" id="progressLabel">0 de 1210 preguntas respondidas</div>
+  <div class="instrucciones"><strong>Instrucciones:</strong> Responda a cada pregunta marcando una casilla por línea. En los últimos 7 días…</div>
+  <div class="progress-label" id="progressLabel">0 de 268 preguntas respondidas</div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   <form id="mainForm"><div id="preguntasContainer"></div>
     <div class="submit-area">
@@ -133,7 +133,7 @@ const EMAILJS_PUBLIC_KEY  = 'PXEw-jfntiZISPx6I';
 const EMAILJS_SERVICE_ID  = 'pepop';
 const EMAILJS_TEMPLATE_ID = 'template_b52eu95';
 emailjs.init(EMAILJS_PUBLIC_KEY);
-const preguntas = ['Me sentí enojado/a.', 'Me sentí irritable.', 'Me sentí solo/a hasta cuando estaba con otras personas.', 'Sentí que no valía nada.', 'Sentí que nada me ilusionaba.', 'Me sentí indefenso/a (que no podía hacer nada para ayudarme).', 'Me distancié de los demás.', 'Sentí que nada me podía animar.', 'Tuve cambios repentinos en mi estado de ánimo.', 'Sentí que no valía tanto como otras personas.', 'Me sentí con ganas de llorar.', 'Me sentí triste.', 'Sentí que quería darme por vencido/a en todo.', 'Sentí que tenía la culpa de lo que pasaba.', 'Me sentí fracasado/a.', 'Me costó trabajo sentir una relación estrecha (cercana) con la gente.', 'Me sentí decepcionado/a de mí mismo/a.', 'Sentí que nadie me necesitaba.', 'Me sentí solo/a.', 'Me sentí deprimido/a.', 'Me sentí desanimado/a acerca del futuro.', 'Descubrí que había cosas en mi vida que eran demasiado para mí.', 'Me sentí descontento/a.', 'Sentí que no me querían.', 'Sentí que no tenía ninguna razón para vivir.', 'Me sentí desesperanzado/a.', 'Me sentí pesimista (que veía las cosas de modo negativo).', 'Sentí que mi vida estaba vacía.', 'Me sentí completamente agotado/a emocionalmente.', 'Sentí que necesitaba ayuda para tratar mi depresión.'];
+const preguntas = ['Sentí que no valía nada.', 'Me sentí indefenso/a (que no podía hacer nada para ayudarme).', 'Me sentí deprimido/a.', 'Me sentí desesperanzado/a.', 'Me sentí fracasado/a.', 'Me sentí descontento/a.', 'Sentí que nada me ilusionaba.', 'Sentí que nada me podía animar.'];
 const opciones  = ['Nunca (1)', 'Rara vez (2)', 'Algunas veces (3)', 'A menudo (4)', 'Siempre (5)'];
 const totalPreguntas = preguntas.length;
 const respuestas = new Array(totalPreguntas).fill(null);
@@ -183,7 +183,7 @@ async function enviarFormulario() {
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       email_psicologo: email,
-      cuestionario: 'PROMIS Depresión — Banco de Ítems v1.0 (Cáncer)',
+      cuestionario: 'PROMIS Depresión SF 8a',
       respuestas: resumen
     });
     document.getElementById('mainForm').style.display = 'none';

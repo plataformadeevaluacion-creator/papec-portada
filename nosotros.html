@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PEPOP — Nosotros</title>
+<title>PEPOP — Nosotras</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -264,6 +264,57 @@ nav {
   .hamburger { display: flex; }
   .nav-links { display: none; }
 }
+
+.contact-section {
+  margin: 3rem 0 1rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #f9f0f4 0%, #fdf6f9 100%);
+  border: 1px solid #f0d6e4;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+}
+.contact-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.contact-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #8b1a4a, #d4547e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.contact-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.contact-email {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #8b1a4a;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.contact-email:hover { color: #d4547e; }
+@media (max-width: 500px) {
+  .contact-section { padding: 1.5rem 1.2rem; }
+  .contact-inner { flex-direction: column; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -278,7 +329,7 @@ nav {
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="cuestionarios.html">Cuestionarios</a></li>
-    <li><a href="nosotros.html" class="active">Nosotros</a></li>
+    <li><a href="nosotros.html" class="active">Nosotras</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -289,7 +340,7 @@ nav {
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
   <a href="index.html" onclick="toggleMenu()">Inicio</a>
   <a href="cuestionarios.html" onclick="toggleMenu()">Cuestionarios</a>
-  <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
+  <a href="nosotros.html" onclick="toggleMenu()">Nosotras</a>
 </div>
 
 <script>
@@ -397,6 +448,18 @@ function toggleMenu() {
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
       Ver cuestionarios
     </a>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+      </div>
+      <div class="contact-text">
+        <p class="contact-label">¿Tienes preguntas o sugerencias?</p>
+        <a href="mailto:plataformadeevaluacion@gmail.com" class="contact-email">plataformadeevaluacion@gmail.com</a>
+      </div>
+    </div>
   </div>
 
 </div>
